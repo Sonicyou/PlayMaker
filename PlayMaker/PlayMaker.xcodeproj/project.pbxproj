@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A500C7E0E972F361337EAF6 /* Pods_PlayMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7435E65EA1D5C04648D92113 /* Pods_PlayMaker.framework */; };
 		ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960842603DE8500DD456D /* AppDelegate.swift */; };
 		ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960862603DE8500DD456D /* SceneDelegate.swift */; };
 		ACC960892603DE8500DD456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960882603DE8500DD456D /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15EBEB3FB4BFDA08CBD2FA9F /* Pods-PlayMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayMaker.debug.xcconfig"; path = "Target Support Files/Pods-PlayMaker/Pods-PlayMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		37BB477E57CC075E483BE3D5 /* Pods-PlayMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayMaker.release.xcconfig"; path = "Target Support Files/Pods-PlayMaker/Pods-PlayMaker.release.xcconfig"; sourceTree = "<group>"; };
+		7435E65EA1D5C04648D92113 /* Pods_PlayMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC960812603DE8500DD456D /* PlayMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC960842603DE8500DD456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC960862603DE8500DD456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A500C7E0E972F361337EAF6 /* Pods_PlayMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C06C121F91AD5FA089A904D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7435E65EA1D5C04648D92113 /* Pods_PlayMaker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78833114160A6E7B98D532EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15EBEB3FB4BFDA08CBD2FA9F /* Pods-PlayMaker.debug.xcconfig */,
+				37BB477E57CC075E483BE3D5 /* Pods-PlayMaker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ACC960782603DE8500DD456D = {
 			isa = PBXGroup;
 			children = (
 				ACC960832603DE8500DD456D /* PlayMaker */,
 				ACC960822603DE8500DD456D /* Products */,
+				78833114160A6E7B98D532EC /* Pods */,
+				1C06C121F91AD5FA089A904D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC960952603DE8800DD456D /* Build configuration list for PBXNativeTarget "PlayMaker" */;
 			buildPhases = (
+				25E202F4D605D0469D4B8DD8 /* [CP] Check Pods Manifest.lock */,
 				ACC9607D2603DE8500DD456D /* Sources */,
 				ACC9607E2603DE8500DD456D /* Frameworks */,
 				ACC9607F2603DE8500DD456D /* Resources */,
+				2EB356276EB0AF6D019C3371 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25E202F4D605D0469D4B8DD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlayMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EB356276EB0AF6D019C3371 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlayMaker/Pods-PlayMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlayMaker/Pods-PlayMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlayMaker/Pods-PlayMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACC9607D2603DE8500DD456D /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		ACC960962603DE8800DD456D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EBEB3FB4BFDA08CBD2FA9F /* Pods-PlayMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		ACC960972603DE8800DD456D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BB477E57CC075E483BE3D5 /* Pods-PlayMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
