@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9A500C7E0E972F361337EAF6 /* Pods_PlayMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7435E65EA1D5C04648D92113 /* Pods_PlayMaker.framework */; };
+		AC7409EF2616404C00CA59CE /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7409EE2616404C00CA59CE /* News.storyboard */; };
+		AC7409F2261640B800CA59CE /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409F1261640B800CA59CE /* NewsViewController.swift */; };
+		AC7409F5261640F800CA59CE /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409F4261640F800CA59CE /* NewsModel.swift */; };
+		AC7409F82616418C00CA59CE /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409F72616418C00CA59CE /* NewsRouter.swift */; };
+		AC7409FB261641BB00CA59CE /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409FA261641BB00CA59CE /* NewsView.swift */; };
+		AC7409FE2616435C00CA59CE /* NewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409FD2616435C00CA59CE /* NewsAssembly.swift */; };
 		ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960842603DE8500DD456D /* AppDelegate.swift */; };
 		ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960862603DE8500DD456D /* SceneDelegate.swift */; };
 		ACC960892603DE8500DD456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960882603DE8500DD456D /* ViewController.swift */; };
@@ -20,6 +26,12 @@
 		15EBEB3FB4BFDA08CBD2FA9F /* Pods-PlayMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayMaker.debug.xcconfig"; path = "Target Support Files/Pods-PlayMaker/Pods-PlayMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		37BB477E57CC075E483BE3D5 /* Pods-PlayMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayMaker.release.xcconfig"; path = "Target Support Files/Pods-PlayMaker/Pods-PlayMaker.release.xcconfig"; sourceTree = "<group>"; };
 		7435E65EA1D5C04648D92113 /* Pods_PlayMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7409EE2616404C00CA59CE /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		AC7409F1261640B800CA59CE /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		AC7409F4261640F800CA59CE /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		AC7409F72616418C00CA59CE /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		AC7409FA261641BB00CA59CE /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		AC7409FD2616435C00CA59CE /* NewsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssembly.swift; sourceTree = "<group>"; };
 		ACC960812603DE8500DD456D /* PlayMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC960842603DE8500DD456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC960862603DE8500DD456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +68,41 @@
 				15EBEB3FB4BFDA08CBD2FA9F /* Pods-PlayMaker.debug.xcconfig */,
 				37BB477E57CC075E483BE3D5 /* Pods-PlayMaker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC7409EA26163FCE00CA59CE /* News */ = {
+			isa = PBXGroup;
+			children = (
+				AC7409EE2616404C00CA59CE /* News.storyboard */,
+				AC7409F1261640B800CA59CE /* NewsViewController.swift */,
+				AC7409F4261640F800CA59CE /* NewsModel.swift */,
+				AC7409F72616418C00CA59CE /* NewsRouter.swift */,
+				AC7409FA261641BB00CA59CE /* NewsView.swift */,
+				AC7409FD2616435C00CA59CE /* NewsAssembly.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		AC7409EB26163FD500CA59CE /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		AC7409EC26163FDF00CA59CE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		AC7409ED26163FE600CA59CE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		ACC960782603DE8500DD456D = {
@@ -81,6 +126,10 @@
 		ACC960832603DE8500DD456D /* PlayMaker */ = {
 			isa = PBXGroup;
 			children = (
+				AC7409EA26163FCE00CA59CE /* News */,
+				AC7409EB26163FD500CA59CE /* Weather */,
+				AC7409EC26163FDF00CA59CE /* Map */,
+				AC7409ED26163FE600CA59CE /* Profile */,
 				ACC960842603DE8500DD456D /* AppDelegate.swift */,
 				ACC960862603DE8500DD456D /* SceneDelegate.swift */,
 				ACC960882603DE8500DD456D /* ViewController.swift */,
@@ -154,6 +203,7 @@
 				ACC960912603DE8800DD456D /* LaunchScreen.storyboard in Resources */,
 				ACC9608E2603DE8800DD456D /* Assets.xcassets in Resources */,
 				ACC9608C2603DE8500DD456D /* Main.storyboard in Resources */,
+				AC7409EF2616404C00CA59CE /* News.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC960892603DE8500DD456D /* ViewController.swift in Sources */,
+				AC7409F82616418C00CA59CE /* NewsRouter.swift in Sources */,
+				AC7409FE2616435C00CA59CE /* NewsAssembly.swift in Sources */,
 				ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */,
+				AC7409FB261641BB00CA59CE /* NewsView.swift in Sources */,
 				ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */,
+				AC7409F2261640B800CA59CE /* NewsViewController.swift in Sources */,
+				AC7409F5261640F800CA59CE /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
