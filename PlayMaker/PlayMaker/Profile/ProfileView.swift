@@ -1,16 +1,15 @@
 //
-//  NewsView.swift
+//  ProfileView.swift
 //  PlayMaker
 //
-//  Created by Артем Фролов on 01.04.2021.
+//  Created by Артем Фролов on 04.04.2021.
 //
 
 import UIKit
 
-class NewsView: UIView {
-    
+class ProfileView: UIView {
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 }
-

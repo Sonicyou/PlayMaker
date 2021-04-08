@@ -14,6 +14,24 @@
 		AC7409F82616418C00CA59CE /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409F72616418C00CA59CE /* NewsRouter.swift */; };
 		AC7409FB261641BB00CA59CE /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409FA261641BB00CA59CE /* NewsView.swift */; };
 		AC7409FE2616435C00CA59CE /* NewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7409FD2616435C00CA59CE /* NewsAssembly.swift */; };
+		AC740A012619E09500CA59CE /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC740A002619E09500CA59CE /* Weather.storyboard */; };
+		AC740A042619E0B600CA59CE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A032619E0B600CA59CE /* WeatherViewController.swift */; };
+		AC740A072619E0D300CA59CE /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A062619E0D300CA59CE /* WeatherModel.swift */; };
+		AC740A0A2619E0F400CA59CE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A092619E0F400CA59CE /* WeatherView.swift */; };
+		AC740A0D2619E12600CA59CE /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A0C2619E12600CA59CE /* WeatherRouter.swift */; };
+		AC740A102619E14400CA59CE /* WeatherAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A0F2619E14400CA59CE /* WeatherAssembly.swift */; };
+		AC740A132619F06600CA59CE /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC740A122619F06600CA59CE /* Map.storyboard */; };
+		AC740A162619F07400CA59CE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A152619F07400CA59CE /* MapView.swift */; };
+		AC740A192619F08700CA59CE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A182619F08700CA59CE /* MapViewController.swift */; };
+		AC740A1C2619F09100CA59CE /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A1B2619F09100CA59CE /* MapModel.swift */; };
+		AC740A1F2619F09C00CA59CE /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A1E2619F09C00CA59CE /* MapRouter.swift */; };
+		AC740A222619F0A700CA59CE /* MapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A212619F0A700CA59CE /* MapAssembly.swift */; };
+		AC740A292619F0C900CA59CE /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A282619F0C900CA59CE /* ProfileModel.swift */; };
+		AC740A2C2619F0D300CA59CE /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A2B2619F0D300CA59CE /* ProfileRouter.swift */; };
+		AC740A2F2619F0E400CA59CE /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A2E2619F0E400CA59CE /* ProfileAssembly.swift */; };
+		AC740A322619F0EF00CA59CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A312619F0EF00CA59CE /* ProfileViewController.swift */; };
+		AC740A352619F0FF00CA59CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A342619F0FF00CA59CE /* ProfileView.swift */; };
+		AC740A382619F10D00CA59CE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC740A372619F10D00CA59CE /* Profile.storyboard */; };
 		ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960842603DE8500DD456D /* AppDelegate.swift */; };
 		ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960862603DE8500DD456D /* SceneDelegate.swift */; };
 		ACC960892603DE8500DD456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960882603DE8500DD456D /* ViewController.swift */; };
@@ -32,6 +50,24 @@
 		AC7409F72616418C00CA59CE /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
 		AC7409FA261641BB00CA59CE /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		AC7409FD2616435C00CA59CE /* NewsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssembly.swift; sourceTree = "<group>"; };
+		AC740A002619E09500CA59CE /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		AC740A032619E0B600CA59CE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		AC740A062619E0D300CA59CE /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		AC740A092619E0F400CA59CE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		AC740A0C2619E12600CA59CE /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
+		AC740A0F2619E14400CA59CE /* WeatherAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssembly.swift; sourceTree = "<group>"; };
+		AC740A122619F06600CA59CE /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		AC740A152619F07400CA59CE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		AC740A182619F08700CA59CE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AC740A1B2619F09100CA59CE /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		AC740A1E2619F09C00CA59CE /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		AC740A212619F0A700CA59CE /* MapAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembly.swift; sourceTree = "<group>"; };
+		AC740A282619F0C900CA59CE /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		AC740A2B2619F0D300CA59CE /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		AC740A2E2619F0E400CA59CE /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		AC740A312619F0EF00CA59CE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AC740A342619F0FF00CA59CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AC740A372619F10D00CA59CE /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		ACC960812603DE8500DD456D /* PlayMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC960842603DE8500DD456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC960862603DE8500DD456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +112,9 @@
 			children = (
 				AC7409EE2616404C00CA59CE /* News.storyboard */,
 				AC7409F1261640B800CA59CE /* NewsViewController.swift */,
+				AC7409FA261641BB00CA59CE /* NewsView.swift */,
 				AC7409F4261640F800CA59CE /* NewsModel.swift */,
 				AC7409F72616418C00CA59CE /* NewsRouter.swift */,
-				AC7409FA261641BB00CA59CE /* NewsView.swift */,
 				AC7409FD2616435C00CA59CE /* NewsAssembly.swift */,
 			);
 			path = News;
@@ -87,6 +123,12 @@
 		AC7409EB26163FD500CA59CE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				AC740A002619E09500CA59CE /* Weather.storyboard */,
+				AC740A032619E0B600CA59CE /* WeatherViewController.swift */,
+				AC740A092619E0F400CA59CE /* WeatherView.swift */,
+				AC740A062619E0D300CA59CE /* WeatherModel.swift */,
+				AC740A0C2619E12600CA59CE /* WeatherRouter.swift */,
+				AC740A0F2619E14400CA59CE /* WeatherAssembly.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -94,6 +136,12 @@
 		AC7409EC26163FDF00CA59CE /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				AC740A122619F06600CA59CE /* Map.storyboard */,
+				AC740A182619F08700CA59CE /* MapViewController.swift */,
+				AC740A152619F07400CA59CE /* MapView.swift */,
+				AC740A1B2619F09100CA59CE /* MapModel.swift */,
+				AC740A1E2619F09C00CA59CE /* MapRouter.swift */,
+				AC740A212619F0A700CA59CE /* MapAssembly.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -101,6 +149,12 @@
 		AC7409ED26163FE600CA59CE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AC740A372619F10D00CA59CE /* Profile.storyboard */,
+				AC740A312619F0EF00CA59CE /* ProfileViewController.swift */,
+				AC740A342619F0FF00CA59CE /* ProfileView.swift */,
+				AC740A282619F0C900CA59CE /* ProfileModel.swift */,
+				AC740A2B2619F0D300CA59CE /* ProfileRouter.swift */,
+				AC740A2E2619F0E400CA59CE /* ProfileAssembly.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -201,9 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC960912603DE8800DD456D /* LaunchScreen.storyboard in Resources */,
+				AC740A012619E09500CA59CE /* Weather.storyboard in Resources */,
 				ACC9608E2603DE8800DD456D /* Assets.xcassets in Resources */,
 				ACC9608C2603DE8500DD456D /* Main.storyboard in Resources */,
 				AC7409EF2616404C00CA59CE /* News.storyboard in Resources */,
+				AC740A382619F10D00CA59CE /* Profile.storyboard in Resources */,
+				AC740A132619F06600CA59CE /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,14 +313,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC740A222619F0A700CA59CE /* MapAssembly.swift in Sources */,
+				AC740A0A2619E0F400CA59CE /* WeatherView.swift in Sources */,
+				AC740A102619E14400CA59CE /* WeatherAssembly.swift in Sources */,
 				ACC960892603DE8500DD456D /* ViewController.swift in Sources */,
+				AC740A2C2619F0D300CA59CE /* ProfileRouter.swift in Sources */,
+				AC740A292619F0C900CA59CE /* ProfileModel.swift in Sources */,
+				AC740A322619F0EF00CA59CE /* ProfileViewController.swift in Sources */,
+				AC740A042619E0B600CA59CE /* WeatherViewController.swift in Sources */,
+				AC740A1F2619F09C00CA59CE /* MapRouter.swift in Sources */,
 				AC7409F82616418C00CA59CE /* NewsRouter.swift in Sources */,
 				AC7409FE2616435C00CA59CE /* NewsAssembly.swift in Sources */,
+				AC740A072619E0D300CA59CE /* WeatherModel.swift in Sources */,
+				AC740A162619F07400CA59CE /* MapView.swift in Sources */,
+				AC740A1C2619F09100CA59CE /* MapModel.swift in Sources */,
 				ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */,
 				AC7409FB261641BB00CA59CE /* NewsView.swift in Sources */,
 				ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */,
+				AC740A352619F0FF00CA59CE /* ProfileView.swift in Sources */,
 				AC7409F2261640B800CA59CE /* NewsViewController.swift in Sources */,
+				AC740A2F2619F0E400CA59CE /* ProfileAssembly.swift in Sources */,
 				AC7409F5261640F800CA59CE /* NewsModel.swift in Sources */,
+				AC740A192619F08700CA59CE /* MapViewController.swift in Sources */,
+				AC740A0D2619E12600CA59CE /* WeatherRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

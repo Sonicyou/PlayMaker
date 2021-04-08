@@ -16,7 +16,7 @@ class NewsAssembly {
         let viewModel = NewsModel(newsRouter: router)
         newsVC.newsModel = viewModel
         let _ = UINavigationController(rootViewController: newsVC)
-        let newsItem = UITabBarItem(title: "News", image: nil, selectedImage: nil)
+        let newsItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), selectedImage: nil)
         newsVC.tabBarItem = newsItem
         return newsVC
     }
