@@ -6,15 +6,21 @@
 //
 
 import UIKit
-import SnapKit
 
-class ViewController: UIViewController {
-
+class ViewController: UITabBarController {
+    
+    private var newsNavigationController : UINavigationController!
+    private var weatherNavigationController : UINavigationController!
+    private var mapNavigationController : UINavigationController!
+    private var profileNavigationController : UINavigationController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        makeTabBarControllers()
     }
-
-
+    
+    private func makeTabBarControllers() {
+        viewControllers = [NewsAssembly().build(),WeatherAssembly().build(), MapAssembly().build(), ProfileAssembly().build()]
+    }
 }
 
