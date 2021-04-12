@@ -17,10 +17,19 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeTabBarControllers()
+        
     }
     
     private func makeTabBarControllers() {
-        viewControllers = [NewsAssembly().build(),WeatherAssembly().build(), MapAssembly().build(), ProfileAssembly().build()]
+        let profileVC = ProfileAssembly().build()
+        profileNavigationController = UINavigationController(rootViewController: profileVC)
+        let profileItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), selectedImage: nil)
+        profileNavigationController.tabBarItem = profileItem
+        profileNavigationController?.navigationBar.prefersLargeTitles = true
+        profileNavigationController?.navigationBar.topItem?.title = "Профиль"
+        
+        viewControllers = [NewsAssembly().build(),WeatherAssembly().build(), MapAssembly().build(), profileNavigationController]
+        
     }
 }
 

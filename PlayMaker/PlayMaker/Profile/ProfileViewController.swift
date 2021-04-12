@@ -8,14 +8,34 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet private var profileView: ProfileView!
     
     var profileModel: ProfileModel!
+    private lazy var dataSource = ProfileDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        configure()
+        bind()
+        view.backgroundColor = .white
     }
+    
+    private func configure() {
+        profileView.profileTableView.dataSource = dataSource
+        profileView.profileTableView.delegate = self
+    }
+    
+    private func bind() {
+        let fields = profileModel.getProfileFields()
+        dataSource.fields = fields
+        profileView.profileTableView.reloadData()
+    }
+}
 
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section != .zero else { return }
+        profileModel.transitionToControllers(type: dataSource.fields[indexPath.row].type)
+    }
 }

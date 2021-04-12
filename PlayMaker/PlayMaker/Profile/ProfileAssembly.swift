@@ -7,17 +7,14 @@
 
 import UIKit
 
-class ProfileAssembly {
+class ProfileAssembly: BaseAssembly {
     
     func build() -> UIViewController {
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         let router = ProfileRouter()
-        let viewModel = ProfileModel(profileRouter: router)
+        let viewModel = ProfileModel(profileRouter: router, userDefaults: serviceFactory.defaults)
         profileVC.profileModel = viewModel
-        let _ = UINavigationController(rootViewController: profileVC)
-        let profileItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), selectedImage: nil)
-        profileVC.tabBarItem = profileItem
         return profileVC
     }
 }

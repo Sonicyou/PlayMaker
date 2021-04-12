@@ -14,7 +14,6 @@ class MapAssembly {
         let router = MapRouter()
         let viewModel = MapModel(mapRouter: router)
         mapVC.mapModel = viewModel
-        let _ = UINavigationController(rootViewController: mapVC)
         let mapItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), selectedImage: nil)
         mapVC.tabBarItem = mapItem
         return mapVC

@@ -1,0 +1,36 @@
+{
+    "fields": 
+    [
+        {
+            "type": "city",
+            "image": "pin",
+            "title": "city",
+            "subtitle": "moscow",
+            "nextImage": "rightArrow"
+        },
+        {
+            "type": "profile",
+            "image": "name",
+            "title": "name",
+            "nextImage": "rightArrow"
+        },
+        {
+            "type": "temperature",
+            "image": "thermometer",
+            "title": "temperature",
+            "picker": true
+        },
+        {
+            "type": "birthdate",
+            "image": "gift",
+            "title": "birthdate",
+            "datePicker": true
+        },
+        {
+            "type": "notification",
+            "image": "notification",
+            "title": "notification",
+            "switchField": true
+        }
+    ]
+}
