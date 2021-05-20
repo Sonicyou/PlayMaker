@@ -35,7 +35,15 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section != .zero else { return }
+//        guard indexPath.section != .zero else { return }
+        if indexPath.section == 0 {
+            profileModel.openMedia()
+        }
         profileModel.transitionToControllers(type: dataSource.fields[indexPath.row].type)
+    }
+}
+extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
     }
 }

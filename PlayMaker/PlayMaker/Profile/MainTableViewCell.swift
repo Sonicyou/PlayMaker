@@ -16,15 +16,19 @@ class MainTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
         configureLayout()
+        
        }
     
-   required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func setup() {
         profileImageView.image = #imageLiteral(resourceName: "profile")
         profileNameLabel.text = "sonicyou"
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        profileImageView.addGestureRecognizer(tap)
+        profileImageView.isUserInteractionEnabled = true
     }
     
     private func configureUI() {
@@ -32,6 +36,7 @@ class MainTableViewCell: UITableViewCell {
         profileImageView.contentMode = .scaleAspectFit
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
+        profileImageView.isUserInteractionEnabled = true
         profileNameLabel.font = UIFont.boldSystemFont(ofSize: 20)
         profileNameLabel.textAlignment = .center
         profileNameLabel.numberOfLines = .zero
@@ -50,5 +55,9 @@ class MainTableViewCell: UITableViewCell {
             make.top.equalTo(profileImageView.snp.bottom).offset(15)
             make.bottom.equalTo(-10)
         }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        print("tapped")
     }
 }

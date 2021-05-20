@@ -10,8 +10,14 @@ import Foundation
 class WeatherModel {
     
     private let weatherRouter: WeatherRouter
+    private let networkService: NetworkServiceProtocol
     
-    init(weatherRouter: WeatherRouter) {
+    init(weatherRouter: WeatherRouter, networkService: NetworkServiceProtocol) {
         self.weatherRouter = weatherRouter
+        self.networkService = networkService
+    }
+    
+    func getWeather() {
+        networkService.getWeather()
     }
 }

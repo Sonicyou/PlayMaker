@@ -42,4 +42,7 @@ class ProfileModel {
         let _ = userDefaults.get(key: .profileImage)
     }
     
+    func openMedia() {
+        profileRouter.createAlertController()
+    }
 }

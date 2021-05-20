@@ -41,6 +41,7 @@
 		ACB4ECB92652E6460070A022 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECB82652E6460070A022 /* ServiceFactory.swift */; };
 		ACB4ECBD2652E7640070A022 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECBC2652E7640070A022 /* UserDefaultsService.swift */; };
 		ACB4ECC02652F3D30070A022 /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECBF2652F3D30070A022 /* BaseAssembly.swift */; };
+		ACB4ECC42656D60F0070A022 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECC32656D60F0070A022 /* NetworkService.swift */; };
 		ACC960852603DE8500DD456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960842603DE8500DD456D /* AppDelegate.swift */; };
 		ACC960872603DE8500DD456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960862603DE8500DD456D /* SceneDelegate.swift */; };
 		ACC960892603DE8500DD456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC960882603DE8500DD456D /* ViewController.swift */; };
@@ -89,6 +90,7 @@
 		ACB4ECB82652E6460070A022 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		ACB4ECBC2652E7640070A022 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		ACB4ECBF2652F3D30070A022 /* BaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembly.swift; sourceTree = "<group>"; };
+		ACB4ECC32656D60F0070A022 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		ACC960812603DE8500DD456D /* PlayMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC960842603DE8500DD456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC960862603DE8500DD456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				ACB4ECB82652E6460070A022 /* ServiceFactory.swift */,
 				ACB4ECBC2652E7640070A022 /* UserDefaultsService.swift */,
+				ACB4ECC32656D60F0070A022 /* NetworkService.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				AC740A432624BFB300CA59CE /* FieldTableViewCell.swift in Sources */,
 				ACB4ECC02652F3D30070A022 /* BaseAssembly.swift in Sources */,
 				AC740A192619F08700CA59CE /* MapViewController.swift in Sources */,
+				ACB4ECC42656D60F0070A022 /* NetworkService.swift in Sources */,
 				AC740A4C2624CD9800CA59CE /* Profile.swift in Sources */,
 				AC740A0D2619E12600CA59CE /* WeatherRouter.swift in Sources */,
 			);

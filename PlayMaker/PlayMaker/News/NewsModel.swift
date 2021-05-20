@@ -10,8 +10,14 @@ import Foundation
 class NewsModel {
     
     private let newsRouter: NewsRouter
+    private let networkService: NetworkServiceProtocol
     
-    init(newsRouter: NewsRouter) {
+    init(newsRouter: NewsRouter, networkService: NetworkServiceProtocol) {
         self.newsRouter = newsRouter
+        self.networkService = networkService
+    }
+    
+    func getNews() {
+        networkService.getNews()
     }
 }

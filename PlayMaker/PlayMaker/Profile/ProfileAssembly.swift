@@ -13,6 +13,7 @@ class ProfileAssembly: BaseAssembly {
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         let router = ProfileRouter()
+        router.profileViewController = profileVC
         let viewModel = ProfileModel(profileRouter: router, userDefaults: serviceFactory.defaults)
         profileVC.profileModel = viewModel
         return profileVC
