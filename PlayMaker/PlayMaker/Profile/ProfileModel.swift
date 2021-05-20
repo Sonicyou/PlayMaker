@@ -5,7 +5,7 @@
 //  Created by Артем Фролов on 04.04.2021.
 //
 
-import Foundation
+import UIKit
 
 class ProfileModel {
     
@@ -26,6 +26,7 @@ class ProfileModel {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
                 let profile = try! JSONDecoder().decode(Profile.self, from: data)
+                print(String(data: data, encoding: .utf8)!)
                 return profile.fields
             } catch {
                 print("error")
@@ -34,12 +35,12 @@ class ProfileModel {
         return []
     }
     
-    func setValue() {
-        userDefaults.set(key: .tempFormat, value: "celcius")
+    func setValue<T>(key: DefaultsKey<T>, value: T?) {
+        userDefaults.set(key: key, value: value)
     }
     
-    func getValue() {
-        let _ = userDefaults.get(key: .profileImage)
+    func getValue<T>(key: DefaultsKey<T>) -> T? {
+        userDefaults.get(key: key)
     }
     
     func openMedia() {

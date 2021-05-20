@@ -9,6 +9,7 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
+    var callback: VoidCompletion?
     private let profileImageView = UIImageView()
     private let profileNameLabel = UILabel()
     
@@ -23,8 +24,8 @@ class MainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-        profileImageView.image = #imageLiteral(resourceName: "profile")
+    func setup(image: UIImage?) {
+        profileImageView.image = image ?? UIImage() //TODO: change to default image
         profileNameLabel.text = "sonicyou"
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         profileImageView.addGestureRecognizer(tap)
@@ -32,8 +33,8 @@ class MainTableViewCell: UITableViewCell {
     }
     
     private func configureUI() {
-        [profileImageView, profileNameLabel].forEach { addSubview($0) }
-        profileImageView.contentMode = .scaleAspectFit
+        [profileImageView, profileNameLabel].forEach { contentView.addSubview($0) }
+        profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
@@ -58,6 +59,6 @@ class MainTableViewCell: UITableViewCell {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        print("tapped")
+        callback?() 
     }
 }

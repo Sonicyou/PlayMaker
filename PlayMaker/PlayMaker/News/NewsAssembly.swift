@@ -13,11 +13,10 @@ class NewsAssembly: BaseAssembly {
         let newsStoryboard = UIStoryboard(name: "News", bundle: nil)
         let newsVC = newsStoryboard.instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
         let router = NewsRouter()
+        router.viewController = newsVC
         let viewModel = NewsModel(newsRouter: router, networkService: serviceFactory.network)
         newsVC.newsModel = viewModel
         let _ = UINavigationController(rootViewController: newsVC)
-        let newsItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), selectedImage: nil)
-        newsVC.tabBarItem = newsItem
         return newsVC
     }
 }

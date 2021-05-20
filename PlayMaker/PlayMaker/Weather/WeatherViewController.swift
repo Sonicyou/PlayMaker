@@ -11,7 +11,7 @@ class WeatherViewController: UIViewController {
 
     @IBOutlet private var weatherView: WeatherView!
     
-    var weatherModel: WeatherModel!
+    var weatherModel: WeatherModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,7 +17,15 @@ class NewsModel {
         self.networkService = networkService
     }
     
-    func getNews() {
+    func moduleDidLoad() {
+        getNews()
+    }
+    
+    func openNewsDescriptionVC() {
+        newsRouter.openNewsDescriptionVC()
+    }
+    
+    private func getNews() {
         networkService.getNews()
     }
 }

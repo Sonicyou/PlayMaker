@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet private var profileView: ProfileView!
     
-    var profileModel: ProfileModel!
+    var profileModel: ProfileModel?
     private lazy var dataSource = ProfileDataSource()
     
     override func viewDidLoad() {
@@ -27,23 +27,38 @@ class ProfileViewController: UIViewController {
     }
     
     private func bind() {
-        let fields = profileModel.getProfileFields()
-        dataSource.fields = fields
+        let fields = profileModel?.getProfileFields()
+        dataSource.fields = fields ?? []
+        if let data = profileModel?.getValue(key: .profileImage) {
+            dataSource.userImage = UIImage(data: data)
+        }
         profileView.profileTableView.reloadData()
+        dataSource.completionDataSource = { [weak self] in
+            self?.profileModel?.openMedia()
+        }
     }
 }
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard indexPath.section != .zero else { return }
-        if indexPath.section == 0 {
-            profileModel.openMedia()
+        guard indexPath.section != .zero else { return }
+        switch dataSource.fields[indexPath.row].type {
+        case .city, .profile:
+            profileModel?.transitionToControllers(type: dataSource.fields[indexPath.row].type)
+        default:
+            break
         }
-        profileModel.transitionToControllers(type: dataSource.fields[indexPath.row].type)
     }
 }
+
 extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dataSource.userImage = pickedImage
+            profileView.profileTableView.reloadData()
+            let data = pickedImage.jpegData(compressionQuality: 0.5)
+            profileModel?.setValue(key: .profileImage, value: data)
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
 }

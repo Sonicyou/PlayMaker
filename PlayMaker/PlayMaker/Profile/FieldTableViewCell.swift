@@ -46,10 +46,8 @@ class FieldTableViewCell: UITableViewCell {
     }
     
     private func configureUI() {
-        [iconImageView, titleLabel, subTitleLabel, separatorView, indicatorImageView].forEach { addSubview($0) }
-        contentView.addSubview(notificationSwitch)
-        contentView.addSubview(segmentedPicker)
-        contentView.addSubview(datePicker)
+        [iconImageView, titleLabel, subTitleLabel, separatorView, indicatorImageView, notificationSwitch, segmentedPicker, datePicker]
+            .forEach { contentView.addSubview($0) }
         selectionStyle = .none
         separatorView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         titleLabel.numberOfLines = .zero

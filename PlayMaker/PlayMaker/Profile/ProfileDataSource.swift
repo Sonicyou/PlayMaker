@@ -10,6 +10,8 @@ import UIKit
 class ProfileDataSource: NSObject {
     
     var fields = [Field]()
+    var completionDataSource: VoidCompletion?
+    var userImage: UIImage?
     
     enum ProfileTableSection: Int, CaseIterable {
         case main, field
@@ -37,7 +39,10 @@ extension ProfileDataSource: UITableViewDataSource {
         switch section {
         case .main:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell {
-                cell.setup()
+                cell.setup(image: userImage)
+                cell.callback = { [weak self] in
+                    self?.completionDataSource?()
+                }
                 return cell
             }
         case .field:

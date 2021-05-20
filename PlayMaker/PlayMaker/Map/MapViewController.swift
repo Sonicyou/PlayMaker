@@ -11,7 +11,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet private var mapView: MapView!
     
-    var mapModel: MapModel!
+    var mapModel: MapModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
