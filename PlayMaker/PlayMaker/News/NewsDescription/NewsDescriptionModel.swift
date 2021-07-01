@@ -10,8 +10,10 @@ import Foundation
 class NewsDescriptionModel {
     
     let router: NewsDescriptionRouter
+    let news: News
     
-    init(router: NewsDescriptionRouter) {
+    init(router: NewsDescriptionRouter, news: News) {
         self.router = router
+        self.news = news
     }
 }

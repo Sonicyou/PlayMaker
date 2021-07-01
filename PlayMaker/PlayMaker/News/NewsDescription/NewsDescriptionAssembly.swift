@@ -9,9 +9,9 @@ import Foundation
 
 class NewsDescriptionAssembly {
     
-    func build() -> NewsDescriptionViewController {
+    func build(news: News) -> NewsDescriptionViewController {
         let router = NewsDescriptionRouter()
-        let model = NewsDescriptionModel(router: router)
+        let model = NewsDescriptionModel(router: router, news: news)
         let vc = NewsDescriptionViewController(newsDescriptionModel: model)
         return vc
     }

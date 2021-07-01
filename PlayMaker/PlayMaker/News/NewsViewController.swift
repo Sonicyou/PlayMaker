@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        newsModel?.moduleDidLoad()
+        bind()
     }
     
     private func configure() {
@@ -26,12 +26,17 @@ class NewsViewController: UIViewController {
     }
     
     private func bind() {
-        
+        newsModel?.getNews(completion: { [weak self] news in
+            self?.dataSource.newsList = news
+            DispatchQueue.main.async {
+                self?.newsView.newsTableView.reloadData()
+            }
+        })
     }
 }
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        newsModel?.openNewsDescriptionVC()
+        newsModel?.openNewsDescriptionVC(news: dataSource.newsList[indexPath.row])
     }
 }

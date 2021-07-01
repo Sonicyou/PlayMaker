@@ -8,41 +8,46 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getNews()
+    func getNews(completion: @escaping NewsCompletion)
     func getWeather()
 }
 
 class NetworkService: NetworkServiceProtocol {
     
-    let baseNewsURL = "http://api.mediastack.com/v1/news"
-    let accessKey = "780806bad258a48c2086c56339c09461"
-    
-    func getNews() {
-        let URLString = baseNewsURL + "?access_key=" + accessKey
-        getRequest(URLString: URLString) { data, error in
-            if let data = data {
-//                let news = try! JSONDecoder().decode(NewsResponse.self, from: data)
-//                print(String(data: data, encoding: .utf8)!)
-//                print (news)
-            }
-            if let error = error {
-                print(error)
+    func getNews(completion: @escaping NewsCompletion) {
+        getRequest(URLString: baseNewsURL + accessKey) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                do {
+                    let jsonData = try JSONDecoder().decode(NewsResponse.self, from: data)
+                    completion(.success(jsonData.data))
+                } catch {
+                    completion(.failure(error))
+                }
             }
         }
     }
     
     func getWeather() {
-        print("weather")//TODO: change
-    }
-    
-    private func getRequest(URLString: String, completion: @escaping (Data?, Error?) -> ()) {
-        guard let url = URL(string: URLString) else { return }
-
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            completion(data, error)
+        getRequest(URLString: "TODO") { result in
+            //TODO:
         }
-        
+    }
+}
+
+extension NetworkService {
+    private func getRequest(URLString: String, completion: @escaping ResultCompletion) {
+        guard let url = URL(string: URLString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            if let data = data {
+                completion(.success(data))
+            }
+        }
         task.resume()
-        
     }
 }

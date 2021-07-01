@@ -25,12 +25,11 @@ class NewsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(text: String?) {
-        title.text = text
-        authorLabel.text = "Michael Jackson"
-        title.text = "The end of COVID-19"
-        descriptionLabel.text = "Ssjdfnjsndf sdkfndkjsf djfndjnfsk wejq wlkmxznc wqlekmqkw sldkmsada wqlkelkqwnd asdnlsakdm aslkdksn dsniw wije wkene dnd ddmd ddkdn fdskfnd dkfnsd dfkds dksdfn dfkdsnf dfndkfs dkfdfn lkjsdfk dkfnd dkfndsf kslnfd dkfkdf nkdfnknd lsdkf kdnfkn fkdnfnf"
-        sourceLabel.text = "BBC News"
+    func setup(news: News) {
+        title.text = news.title
+        authorLabel.text = news.author
+        descriptionLabel.text = news.description
+        sourceLabel.text = news.source
         publishedTimeLabel.text = "April 1, 2020"
     }
     

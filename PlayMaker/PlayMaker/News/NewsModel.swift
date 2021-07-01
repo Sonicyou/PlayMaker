@@ -17,15 +17,19 @@ class NewsModel {
         self.networkService = networkService
     }
     
-    func moduleDidLoad() {
-        getNews()
+    func openNewsDescriptionVC(news: News) {
+        newsRouter.openNewsDescriptionVC(news: news)
+        
     }
     
-    func openNewsDescriptionVC() {
-        newsRouter.openNewsDescriptionVC()
-    }
-    
-    private func getNews() {
-        networkService.getNews()
+    func getNews(completion: @escaping ([News]) -> ()) {
+        networkService.getNews { [weak self] result in
+            switch result {
+            case .success(let news):
+                completion(news)
+            case .failure(let error):
+                self?.newsRouter.showError(error)
+            }
+        }
     }
 }

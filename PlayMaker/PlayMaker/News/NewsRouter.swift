@@ -11,9 +11,12 @@ class NewsRouter {
     
     weak var viewController: UIViewController?
     
-    func openNewsDescriptionVC() {
-        
-        let vc = NewsDescriptionAssembly().build()
+    func openNewsDescriptionVC(news: News) {
+        let vc = NewsDescriptionAssembly().build(news: news)
         viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showError(_ error: Error) {
+        print(error.localizedDescription)
     }
 }
