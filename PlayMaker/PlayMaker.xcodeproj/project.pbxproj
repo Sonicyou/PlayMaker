@@ -45,6 +45,8 @@
 		AC740A4C2624CD9800CA59CE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740A4B2624CD9800CA59CE /* Profile.swift */; };
 		AC740A4F2624CE5900CA59CE /* Profile.json in Resources */ = {isa = PBXBuildFile; fileRef = AC740A4E2624CE5900CA59CE /* Profile.json */; };
 		ACA12B9F268E385B00DCB4DB /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA12B9E268E385B00DCB4DB /* News.swift */; };
+		ACAB6E0826B31B2F0063AAD9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB6E0726B31B2F0063AAD9 /* UIView+Extension.swift */; };
+		ACAB6E0A26B84AC40063AAD9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB6E0926B84AC40063AAD9 /* Weather.swift */; };
 		ACB4ECB92652E6460070A022 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECB82652E6460070A022 /* ServiceFactory.swift */; };
 		ACB4ECBD2652E7640070A022 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECBC2652E7640070A022 /* UserDefaultsService.swift */; };
 		ACB4ECC02652F3D30070A022 /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ECBF2652F3D30070A022 /* BaseAssembly.swift */; };
@@ -63,6 +65,8 @@
 		ACC960912603DE8800DD456D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC9608F2603DE8800DD456D /* LaunchScreen.storyboard */; };
 		ACCE57552680E8310045498B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE57542680E8310045498B /* NewsTableViewCell.swift */; };
 		ACCE57572680EA300045498B /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE57562680EA300045498B /* NewsDataSource.swift */; };
+		ACE24E3626975BC20049B050 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE24E3526975BC20049B050 /* String+Extension.swift */; };
+		ACE24E3826975D480049B050 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE24E3726975D480049B050 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +113,8 @@
 		AC740A4B2624CD9800CA59CE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		AC740A4E2624CE5900CA59CE /* Profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Profile.json; sourceTree = "<group>"; };
 		ACA12B9E268E385B00DCB4DB /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		ACAB6E0726B31B2F0063AAD9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		ACAB6E0926B84AC40063AAD9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		ACB4ECB82652E6460070A022 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		ACB4ECBC2652E7640070A022 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		ACB4ECBF2652F3D30070A022 /* BaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembly.swift; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 		ACC960922603DE8800DD456D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCE57542680E8310045498B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		ACCE57562680EA300045498B /* NewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
+		ACE24E3526975BC20049B050 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		ACE24E3726975D480049B050 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +181,16 @@
 			path = Cities;
 			sourceTree = "<group>";
 		};
+		AC6D137E26975B4800A2B516 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACE24E3526975BC20049B050 /* String+Extension.swift */,
+				ACE24E3726975D480049B050 /* Date+Extension.swift */,
+				ACAB6E0726B31B2F0063AAD9 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AC7409EA26163FCE00CA59CE /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +217,7 @@
 				AC740A062619E0D300CA59CE /* WeatherModel.swift */,
 				AC740A0C2619E12600CA59CE /* WeatherRouter.swift */,
 				AC740A0F2619E14400CA59CE /* WeatherAssembly.swift */,
+				ACAB6E0926B84AC40063AAD9 /* Weather.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 		ACC960832603DE8500DD456D /* PlayMaker */ = {
 			isa = PBXGroup;
 			children = (
+				AC6D137E26975B4800A2B516 /* Extensions */,
 				AC0DAA3226695ADC009BFBFD /* Cities */,
 				ACB4ECB72652E61E0070A022 /* Factory */,
 				AC7409EA26163FCE00CA59CE /* News */,
@@ -423,6 +443,7 @@
 				AC740A462624C4EA00CA59CE /* ProfileDataSource.swift in Sources */,
 				AC740A102619E14400CA59CE /* WeatherAssembly.swift in Sources */,
 				AC0DAA3C26695BAF009BFBFD /* CitiesAssembly.swift in Sources */,
+				ACE24E3826975D480049B050 /* Date+Extension.swift in Sources */,
 				ACB4ECB92652E6460070A022 /* ServiceFactory.swift in Sources */,
 				ACB573D62684EF7800F2BACD /* NewsDescriptionModel.swift in Sources */,
 				ACC960892603DE8500DD456D /* ViewController.swift in Sources */,
@@ -431,8 +452,11 @@
 				ACB4ECCF265C23710070A022 /* Constants.swift in Sources */,
 				AC740A292619F0C900CA59CE /* ProfileModel.swift in Sources */,
 				ACB573D82684EFCB00F2BACD /* NewsDescriptionViewController.swift in Sources */,
+				ACAB6E0A26B84AC40063AAD9 /* Weather.swift in Sources */,
 				ACB573DE2684EFFE00F2BACD /* NewsDescriptionRouter.swift in Sources */,
+				ACAB6E0826B31B2F0063AAD9 /* UIView+Extension.swift in Sources */,
 				AC740A322619F0EF00CA59CE /* ProfileViewController.swift in Sources */,
+				ACE24E3626975BC20049B050 /* String+Extension.swift in Sources */,
 				AC740A042619E0B600CA59CE /* WeatherViewController.swift in Sources */,
 				AC740A1F2619F09C00CA59CE /* MapRouter.swift in Sources */,
 				AC7409F82616418C00CA59CE /* NewsRouter.swift in Sources */,

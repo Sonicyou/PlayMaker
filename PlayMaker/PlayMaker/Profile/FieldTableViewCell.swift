@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol FieldTableViewCellProtocol: AnyObject {
+    func notificationChanged(value: Bool)
+}
+
 class FieldTableViewCell: UITableViewCell {
 
+    weak var delegate: FieldTableViewCellProtocol?
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
     private let subTitleLabel = UILabel()
@@ -28,7 +33,7 @@ class FieldTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ field: Field) {
+    func setup(_ field: Field, _ isOn: Bool?) {
         iconImageView.image = UIImage(named: field.image)?.withRenderingMode(.alwaysTemplate)
         iconImageView.tintColor = .lightGray
         if let nextImage = field.nextImage {
@@ -42,7 +47,9 @@ class FieldTableViewCell: UITableViewCell {
         datePicker.isHidden = field.datePicker == nil
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = UIColor.white
-        
+        datePicker.locale = Locale.current
+        notificationSwitch.isOn = isOn ?? false
+//        datePicker.preferredDatePickerStyle = .wheels
     }
     
     private func configureUI() {
@@ -53,6 +60,7 @@ class FieldTableViewCell: UITableViewCell {
         titleLabel.numberOfLines = .zero
         notificationSwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+        datePicker.frame  = CGRect(origin: .zero, size: frame.size)
     }
     
     private func configureLayout() {
@@ -82,6 +90,8 @@ class FieldTableViewCell: UITableViewCell {
         datePicker.snp.makeConstraints { make in
             make.trailing.equalTo(-15)
             make.centerY.equalToSuperview()
+//            make.width.equalTo(280)
+            make.height.equalTo(60)
         }
         
         segmentedPicker.snp.makeConstraints { make in
@@ -91,14 +101,15 @@ class FieldTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(10)
-            make.top.equalTo(10)
-            make.bottom.equalTo(-10)
+            make.top.equalTo(25)
+            make.bottom.equalTo(-25)
             make.trailing.equalTo(indicatorImageView.snp.leading).offset(-10)
         }
     }
     
-    @objc private func switchChanged(notificationSwitch: UISwitch) {
-        print(notificationSwitch.isOn)
+    @objc private func switchChanged(switch: UISwitch) {
+        delegate?.notificationChanged(value: notificationSwitch.isOn)
+        print (notificationSwitch.isOn)
     }
     
     @objc private func datePickerValueChanged(_ sender: UIDatePicker){

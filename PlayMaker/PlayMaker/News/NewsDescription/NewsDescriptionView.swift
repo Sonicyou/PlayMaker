@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsDescriptionView: UIView {
     
     private let stackView = UIStackView()
-    private let image = UIImageView()
+    private let imageView = UIImageView()
     private let title = UILabel()
     private let descriptionTextView = UITextView()
     
@@ -25,9 +26,25 @@ class NewsDescriptionView: UIView {
     }
     
     func setup(news: News) {
-        title.text = news.title
-        descriptionTextView.text = news.description
-        image.isHidden = true
+        if let string = news.image {
+            imageView.sd_setImage(with: URL(string: string)) { image, _, _, _ in
+                if let _ = image {
+                    delay(1) {
+                        self.stackView.insertArrangedSubview(self.imageView, at: 0)
+                    }
+                }
+            }
+        }
+        
+        if let newsTitle = news.title {
+            self.title.text = newsTitle
+            self.stackView.addArrangedSubview(self.title)
+        }
+        
+        if let descriptionText = news.description {
+            self.descriptionTextView.text = descriptionText
+            self.stackView.addArrangedSubview(self.descriptionTextView)
+        }
     }
     
     private func configureUI() {
@@ -35,9 +52,7 @@ class NewsDescriptionView: UIView {
         stackView.distribution = .fill
         stackView.spacing = 10
         addSubview(stackView)
-        [title, descriptionTextView].forEach {
-            stackView.addArrangedSubview($0)
-        }
+        imageView.contentMode = .scaleAspectFill
         title.numberOfLines = .zero
         title.textAlignment = .center
         backgroundColor = .white
@@ -48,5 +63,15 @@ class NewsDescriptionView: UIView {
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
             make.trailing.leading.bottom.equalToSuperview()
         }
+    }
+    
+    deinit {
+        print("NewsDescriptionView")
+    }
+}
+
+func delay(_ delay: TimeInterval, closure: @escaping VoidCompletion) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        closure()
     }
 }

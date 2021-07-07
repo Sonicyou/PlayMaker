@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
     
     private func configure() {
         profileView.profileTableView.dataSource = dataSource
+        dataSource.delegate = self
+        dataSource.isOn = profileModel?.getValue(key: .isOnNotification)
         profileView.profileTableView.delegate = self
     }
     
@@ -36,6 +38,10 @@ class ProfileViewController: UIViewController {
         dataSource.completionDataSource = { [weak self] in
             self?.profileModel?.openMedia()
         }
+    }
+    
+    func notificationChanged<T>(key: DefaultsKey<T>, value: T?) {
+        profileModel?.setValue(key: key, value: value)
     }
 }
 
@@ -60,5 +66,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationCon
             profileModel?.setValue(key: .profileImage, value: data)
         }
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: ProfileDataSourceProtocol {
+    func notificationChanged(value: Bool) {
+        profileModel?.setValue(key: .isOnNotification, value: value)
     }
 }

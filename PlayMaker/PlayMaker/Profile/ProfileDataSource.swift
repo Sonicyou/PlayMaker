@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol ProfileDataSourceProtocol: AnyObject {
+    func notificationChanged(value: Bool)
+}
+
 class ProfileDataSource: NSObject {
     
+    weak var delegate: ProfileDataSourceProtocol?
     var fields = [Field]()
     var completionDataSource: VoidCompletion?
     var userImage: UIImage?
+    var isOn: Bool?
     
     enum ProfileTableSection: Int, CaseIterable {
         case main, field
@@ -47,10 +53,19 @@ extension ProfileDataSource: UITableViewDataSource {
             }
         case .field:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "FieldTableViewCell", for: indexPath) as? FieldTableViewCell {
-                cell.setup(fields[indexPath.row])
+                cell.setup(fields[indexPath.row], isOn)
+                cell.delegate = self
                 return cell
             }
         }
         return UITableViewCell()
     }
 }
+
+extension ProfileDataSource: FieldTableViewCellProtocol {
+    func notificationChanged(value: Bool) {
+        delegate?.notificationChanged(value: value)
+    }
+}
+
+

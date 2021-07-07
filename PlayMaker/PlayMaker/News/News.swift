@@ -21,10 +21,10 @@ struct News: Codable {
     let category: String?
     let language: String?
     let country: String?
-    //let publishedAt: String?
+    let publishedAt: String?
     
-//    enum CodingKeys: String, CodingKey {
-//        case publishedAt = "published_at"
-//        case author, title, description, url, source, image, category, language, country
-//    }
+    enum CodingKeys: String, CodingKey {
+        case author, title, description, url, source, image, category, language, country
+        case publishedAt = "published_at"
+    }
 }

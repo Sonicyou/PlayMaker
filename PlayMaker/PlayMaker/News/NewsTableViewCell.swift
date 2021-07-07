@@ -30,7 +30,7 @@ class NewsTableViewCell: UITableViewCell {
         authorLabel.text = news.author
         descriptionLabel.text = news.description
         sourceLabel.text = news.source
-        publishedTimeLabel.text = "April 1, 2020"
+        publishedTimeLabel.text = news.publishedAt?.monthDayYear
     }
     
     private func configureUI() {

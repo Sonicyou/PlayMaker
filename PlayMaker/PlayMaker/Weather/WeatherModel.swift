@@ -17,7 +17,7 @@ class WeatherModel {
         self.networkService = networkService
     }
     
-    func getWeather() {
-        networkService.getWeather()
-    }
+//    func getWeather() {
+//        networkService.getWeather()
+//    }
 }
