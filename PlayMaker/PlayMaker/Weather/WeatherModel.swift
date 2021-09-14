@@ -17,7 +17,14 @@ class WeatherModel {
         self.networkService = networkService
     }
     
-//    func getWeather() {
-//        networkService.getWeather()
-//    }
+    func getWeather(complition: @escaping (Weather?) -> ())  {
+        networkService.getWeather { result in
+            switch result {
+            case .success(let weather):
+                complition(weather)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

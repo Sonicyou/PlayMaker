@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
     @IBOutlet private var weatherView: WeatherView!
     
     var weatherModel: WeatherModel?
@@ -19,6 +19,10 @@ class WeatherViewController: UIViewController {
     }
     
     private func bind() {
-//        weatherModel?.getWeather()
+        weatherModel?.getWeather(complition: { [weak self] weather in
+            DispatchQueue.main.async {
+                self?.weatherView.setup(weather: weather)
+            }
+        })
     }
 }

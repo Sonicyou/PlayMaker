@@ -12,7 +12,7 @@ protocol FieldTableViewCellProtocol: AnyObject {
 }
 
 class FieldTableViewCell: UITableViewCell {
-
+    
     weak var delegate: FieldTableViewCellProtocol?
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
@@ -21,7 +21,7 @@ class FieldTableViewCell: UITableViewCell {
     private let notificationSwitch = UISwitch()
     private let separatorView = UIView()
     private let segmentedPicker = UISegmentedControl(items: ["°C","°F"])
-    private let datePicker = UIDatePicker()
+    private let datePicker = UIDatePicker(frame: .zero)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -49,7 +49,7 @@ class FieldTableViewCell: UITableViewCell {
         datePicker.backgroundColor = UIColor.white
         datePicker.locale = Locale.current
         notificationSwitch.isOn = isOn ?? false
-//        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.preferredDatePickerStyle = .compact
     }
     
     private func configureUI() {
@@ -60,7 +60,6 @@ class FieldTableViewCell: UITableViewCell {
         titleLabel.numberOfLines = .zero
         notificationSwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-        datePicker.frame  = CGRect(origin: .zero, size: frame.size)
     }
     
     private func configureLayout() {
@@ -72,7 +71,8 @@ class FieldTableViewCell: UITableViewCell {
         }
         
         iconImageView.snp.makeConstraints { make in
-            make.top.leading.equalTo(10)
+            make.leading.equalTo(10)
+            make.centerY.equalToSuperview()
             make.size.equalTo(25)
         }
         
@@ -101,29 +101,19 @@ class FieldTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(10)
-            make.top.equalTo(25)
-            make.bottom.equalTo(-25)
+            make.top.equalTo(18)
+            make.bottom.equalTo(-18)
             make.trailing.equalTo(indicatorImageView.snp.leading).offset(-10)
         }
     }
     
     @objc private func switchChanged(switch: UISwitch) {
         delegate?.notificationChanged(value: notificationSwitch.isOn)
-        print (notificationSwitch.isOn)
     }
     
-    @objc private func datePickerValueChanged(_ sender: UIDatePicker){
-            
-            // Create date formatter
-            let dateFormatter: DateFormatter = DateFormatter()
-            
-            // Set date format
-            dateFormatter.dateFormat = "MM/dd/yyyy"
-            
-            // Apply date format
-            let selectedDate: String = dateFormatter.string(from: sender.date)
-            
-            print("Selected value \(selectedDate)")
-        }
-    
+    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let _ : String = dateFormatter.string(from: sender.date)
+    }
 }

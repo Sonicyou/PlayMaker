@@ -25,6 +25,7 @@ class NewsDescriptionViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureLayout()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func configureUI() {

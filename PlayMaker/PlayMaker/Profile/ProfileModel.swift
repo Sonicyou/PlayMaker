@@ -26,7 +26,6 @@ class ProfileModel {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
                 let profile = try! JSONDecoder().decode(Profile.self, from: data)
-                print(String(data: data, encoding: .utf8)!)
                 return profile.fields
             } catch {
                 print("error")

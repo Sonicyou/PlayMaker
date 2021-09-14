@@ -14,6 +14,7 @@ class NewsTableViewCell: UITableViewCell {
     private let descriptionLabel = UILabel()
     private let sourceLabel = UILabel()
     private let publishedTimeLabel = UILabel()
+    private let separatorView = UIView()
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,11 +35,11 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     private func configureUI() {
-        [authorLabel, title, descriptionLabel, sourceLabel, publishedTimeLabel].forEach {
-            contentView.addSubview($0)
-        }
+        [authorLabel, title, descriptionLabel, sourceLabel, publishedTimeLabel,  separatorView]
+            .forEach { contentView.addSubview($0) }
         descriptionLabel.numberOfLines = 4
         selectionStyle = .none
+        separatorView.backgroundColor = .lightGray
     }
     
     private func configureLayout() {
@@ -68,6 +69,14 @@ class NewsTableViewCell: UITableViewCell {
             make.leading.equalTo(15)
             make.bottom.equalTo(-15)
             make.width.equalTo(250)
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.trailing.equalTo(-15)
+            make.leading.equalTo(15)
+            make.height.equalTo(1)
+            
         }
         
     }

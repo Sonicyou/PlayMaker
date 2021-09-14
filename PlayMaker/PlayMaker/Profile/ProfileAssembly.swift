@@ -16,6 +16,7 @@ class ProfileAssembly: BaseAssembly {
         router.profileViewController = profileVC
         let viewModel = ProfileModel(profileRouter: router, userDefaults: serviceFactory.defaults)
         profileVC.profileModel = viewModel
+        let _ = UINavigationController(rootViewController: profileVC)
         return profileVC
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 protocol NetworkServiceProtocol {
     func getNews(completion: @escaping NewsCompletion)
     func getWeather(completion: @escaping WeatherCompletion)
+    func getCity(completion: @escaping CitiesCompletion)
 }
 
 class NetworkService: NetworkServiceProtocol {
@@ -38,6 +39,22 @@ class NetworkService: NetworkServiceProtocol {
             case .success(let data):
                 do {
                     let jsonData = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                    completion(.success(jsonData.data.first))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func getCity(completion: @escaping CitiesCompletion) {
+        getRequest(URLString: baseCitiesURL) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                do {
+                    let jsonData = try JSONDecoder().decode(CityResponse.self, from: data)
                     completion(.success(jsonData.data))
                 } catch {
                     completion(.failure(error))

@@ -30,6 +30,7 @@ class MapViewController: UIViewController {
         mapView.completionLocationTapped = { [weak self] in
             self?.locationManager?.startUpdatingLocation()
         }
+        locationManager?.startUpdatingLocation()
     }
 }
 

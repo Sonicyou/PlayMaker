@@ -12,10 +12,10 @@ struct WeatherResponse: Codable {
 }
 
 struct Weather: Codable {
-    let sunrise: String?
-    let sunset: String?
+    var sunrise: String = ""
+    var sunset: String = ""
     let city_name: String?
-    let temp: String?
+    var temp: Double = .zero
     let weather: WeatherImage?
 }
 

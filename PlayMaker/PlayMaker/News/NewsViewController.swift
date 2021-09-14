@@ -30,6 +30,7 @@ class NewsViewController: UIViewController {
             self?.dataSource.newsList = news
             DispatchQueue.main.async {
                 self?.newsView.newsTableView.reloadData()
+                self?.newsView.stopActivityIndicator()
             }
         })
     }

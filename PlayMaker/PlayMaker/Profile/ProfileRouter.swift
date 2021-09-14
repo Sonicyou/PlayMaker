@@ -14,10 +14,10 @@ class ProfileRouter {
     func transitionToControllers(type: Field.FieldState) {
         switch type {
         case .city:
-            let citiesVC = CitiesAssembly().build()
+            let citiesVC = CountryAssembly().build()
             profileViewController?.navigationController?.pushViewController(citiesVC, animated: true)
         case .profile:
-            print("profile")
+            break
         default:
             break
         }
