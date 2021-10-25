@@ -9,6 +9,7 @@ import UIKit
 
 class CityViewController: UIViewController {
     
+    var cityCompletion: StringCompletion?
     let cityModel: CityModel
     private let cityView = CityView()
     private lazy var dataSource = CityTableViewDataSource()
@@ -26,7 +27,6 @@ class CityViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureLayout()
-        bind()
     }
     
     private func configureUI() {
@@ -42,13 +42,12 @@ class CityViewController: UIViewController {
         }
     }
     
-    private func bind() {
-        
-    }
 }
 
 extension CityViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        dataSource.countries[indexPath.row].cities
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cityCompletion?(dataSource.cities[indexPath.row])
+        cityModel.setValue(key: .city, value: dataSource.cities[indexPath.row])
+        cityModel.returnToProfileScreen()
+    }
 }

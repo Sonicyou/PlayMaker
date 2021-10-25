@@ -16,8 +16,8 @@ class WeatherAssembly: BaseAssembly {
         let viewModel = WeatherModel(weatherRouter: router, networkService: serviceFactory.network)
         weatherVC.weatherModel = viewModel
         let _ = UINavigationController(rootViewController: weatherVC)
-        let weatherItem = UITabBarItem(title: "Weather", image: UIImage(systemName: "cloud.sun"), selectedImage: nil)
-        weatherVC.tabBarItem = weatherItem
+//        let weatherItem = UITabBarItem(title: "Weather", image: UIImage(systemName: "cloud.sun"), selectedImage: nil)
+//        weatherVC.tabBarItem = weatherItem
         return weatherVC
         
     }

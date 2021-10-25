@@ -30,4 +30,17 @@ extension String {
         formatter.locale = Locale.current
         return formatter.string(from: dateOrigin)
     }
+    
+    func utcToLocal() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        if let date = dateFormatter.date(from: self) {
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "HH:mm"
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
 }

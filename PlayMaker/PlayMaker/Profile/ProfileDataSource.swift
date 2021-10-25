@@ -18,6 +18,7 @@ class ProfileDataSource: NSObject {
     var completionDataSource: VoidCompletion?
     var userImage: UIImage?
     var isOn: Bool?
+    var cityName: String?
     
     enum ProfileTableSection: Int, CaseIterable {
         case main, field
@@ -53,7 +54,7 @@ extension ProfileDataSource: UITableViewDataSource {
             }
         case .field:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "FieldTableViewCell", for: indexPath) as? FieldTableViewCell {
-                cell.setup(fields[indexPath.row], isOn)
+                cell.setup(fields[indexPath.row], isOn, cityName: cityName)
                 cell.delegate = self
                 return cell
             }

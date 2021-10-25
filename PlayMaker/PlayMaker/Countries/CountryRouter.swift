@@ -9,9 +9,10 @@ import Foundation
 
 class CountryRouter {
     weak var countryViewController: CountryViewController?
+    var cityCompletion: StringCompletion?
     
     func showCities(cities: [String]) {
-        let cityVC = CityAssembly().build(cities: cities)
+        let cityVC = CityAssembly().build(cities: cities, cityCompletion: cityCompletion)
         countryViewController?.navigationController?.pushViewController(cityVC, animated: true)
     }
 }

@@ -34,6 +34,7 @@ class DefaultsKeys {
     static let profileImage = DefaultsKey<Data>(value: "profileImage")
     static let tempFormat = DefaultsKey<String>(value: "tempFormat")
     static let isOnNotification = DefaultsKey<Bool>(value: "isOnNotification")
+    static let city = DefaultsKey<String>(value: "city")
 }
 
 class DefaultsKey<T>: DefaultsKeys {

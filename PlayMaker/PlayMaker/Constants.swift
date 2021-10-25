@@ -8,6 +8,7 @@
 import Foundation
 
 typealias VoidCompletion = (() -> Void)
+typealias StringCompletion = ((String) -> Void)
 typealias NewsCompletion = (Result<[News], Error>) -> ()
 typealias ResultCompletion = (Result<Data, Error>) -> ()
 typealias WeatherCompletion = (Result<Weather?, Error>) -> ()

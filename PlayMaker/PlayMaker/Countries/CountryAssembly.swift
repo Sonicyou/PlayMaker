@@ -9,11 +9,12 @@ import UIKit
 
 class CountryAssembly: BaseAssembly {
     
-    func build() -> CountryViewController {
+    func build(cityCompletion: StringCompletion?) -> CountryViewController {
         let router = CountryRouter()
         let citiesModel = CountryModel(router: router, networkService: serviceFactory.network)
         let citiesVC = CountryViewController(model: citiesModel)
         router.countryViewController = citiesVC
+        router.cityCompletion = cityCompletion
         return citiesVC
     }
 }

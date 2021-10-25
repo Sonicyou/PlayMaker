@@ -25,26 +25,26 @@ class WeatherView: UIView {
     func setup(weather: Weather?) {
         guard let weather = weather else { return }
         cityName.text = weather.city_name
-        temp.text = String(weather.temp)
+        temp.text = weather.tempCelcius
         descriptionWeather.text = weather.weather?.description
-        sunrise.text = "Рассвет: " + weather.sunrise
-        sunset.text = "Закат: " + weather.sunset
+        sunrise.text = "Sunrise: " + (weather.sunrise.utcToLocal() ?? "")
+        sunset.text = "Sunset: " + (weather.sunset.utcToLocal() ?? "")
     }
     
     private func configureUI() {
         [weatherIcon,cityName,sunset,sunrise,temp,descriptionWeather].forEach {
             addSubview($0)
         }
-        cityName.font = cityName.font.withSize(50)
+        cityName.font = cityName.font.withSize(45)
         temp.font = temp.font.withSize(80)
         descriptionWeather.font = descriptionWeather.font.withSize(30)
-        sunrise.font = sunrise.font.withSize(30)
-        sunset.font = sunset.font.withSize(30)
+        sunrise.font = sunrise.font.withSize(25)
+        sunset.font = sunset.font.withSize(25)
     }
     
     private func configureLayout() {
         cityName.snp.makeConstraints { make in
-            make.top.equalTo(80)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
         }
         
@@ -54,17 +54,17 @@ class WeatherView: UIView {
         }
         
         descriptionWeather.snp.makeConstraints { make in
-            make.top.equalTo(temp.snp.bottom).offset(20)
+            make.top.equalTo(temp.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
         
         sunrise.snp.makeConstraints { make in
-            make.bottom.equalTo(sunset.snp.top).offset(-20)
+            make.bottom.equalTo(sunset.snp.top).offset(-10)
             make.centerX.equalToSuperview()
         }
         
         sunset.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-100)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-15)
             make.centerX.equalToSuperview()
         }
     }

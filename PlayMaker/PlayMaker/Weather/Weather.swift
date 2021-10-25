@@ -17,6 +17,10 @@ struct Weather: Codable {
     let city_name: String?
     var temp: Double = .zero
     let weather: WeatherImage?
+    
+    var tempCelcius: String {
+        "\(Int(temp))°C"
+    }
 }
 
 struct WeatherImage: Codable {

@@ -33,7 +33,7 @@ class FieldTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ field: Field, _ isOn: Bool?) {
+    func setup(_ field: Field, _ isOn: Bool?, cityName: String?) {
         iconImageView.image = UIImage(named: field.image)?.withRenderingMode(.alwaysTemplate)
         iconImageView.tintColor = .lightGray
         if let nextImage = field.nextImage {
@@ -41,7 +41,8 @@ class FieldTableViewCell: UITableViewCell {
             indicatorImageView.tintColor = UIColor.black.withAlphaComponent(0.15)
         }
         titleLabel.text = NSLocalizedString(field.title, comment: "")
-        subTitleLabel.text = field.subtitle
+        subTitleLabel.isHidden = field.isCity == nil
+        subTitleLabel.text = cityName
         notificationSwitch.isHidden = field.switchField == nil
         segmentedPicker.isHidden = field.picker == nil
         datePicker.isHidden = field.datePicker == nil
@@ -76,6 +77,11 @@ class FieldTableViewCell: UITableViewCell {
             make.size.equalTo(25)
         }
         
+        subTitleLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalTo(-50)
+        }
+        
         indicatorImageView.snp.makeConstraints { make in
             make.trailing.equalTo(-15)
             make.centerY.equalToSuperview()
@@ -90,7 +96,6 @@ class FieldTableViewCell: UITableViewCell {
         datePicker.snp.makeConstraints { make in
             make.trailing.equalTo(-15)
             make.centerY.equalToSuperview()
-//            make.width.equalTo(280)
             make.height.equalTo(60)
         }
         

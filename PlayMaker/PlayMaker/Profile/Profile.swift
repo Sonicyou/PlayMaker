@@ -20,6 +20,7 @@ struct Field: Codable {
     let picker: Bool?
     let datePicker: Bool?
     let nextImage: String?
+    let isCity: Bool?
     
     enum FieldState: String, Codable {
         case city, profile, temperature, birthdate, notification

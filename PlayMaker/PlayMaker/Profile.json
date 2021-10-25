@@ -6,7 +6,8 @@
             "image": "pin",
             "title": "city",
             "subtitle": "moscow",
-            "nextImage": "rightArrow"
+            "nextImage": "rightArrow",
+            "isCity": true
         },
         {
             "type": "profile",

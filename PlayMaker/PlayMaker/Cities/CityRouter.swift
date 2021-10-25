@@ -9,4 +9,8 @@ import Foundation
 
 class CityRouter {
     weak var cityViewController: CityViewController?
+    
+    func returnToProfileScreen() {
+        cityViewController?.navigationController?.popToRootViewController(animated: true)
+    }
 }

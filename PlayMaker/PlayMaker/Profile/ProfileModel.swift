@@ -17,8 +17,8 @@ class ProfileModel {
         self.userDefaults = userDefaults
     }
     
-    func transitionToControllers(type: Field.FieldState) {
-        profileRouter.transitionToControllers(type: type)
+    func transitionToControllers(type: Field.FieldState, cityCompletion: StringCompletion?) {
+        profileRouter.transitionToControllers(type: type, cityCompletion: cityCompletion)
     }
     
     func getProfileFields() -> [Field] {

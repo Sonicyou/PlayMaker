@@ -12,13 +12,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet private var profileView: ProfileView!
     
     var profileModel: ProfileModel?
+    private var cityCompletion: StringCompletion?
     private lazy var dataSource = ProfileDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         bind()
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
     }
     
     private func configure() {
@@ -34,9 +35,14 @@ class ProfileViewController: UIViewController {
         if let data = profileModel?.getValue(key: .profileImage) {
             dataSource.userImage = UIImage(data: data)
         }
+        dataSource.cityName = profileModel?.getValue(key: .city)
         profileView.profileTableView.reloadData()
         dataSource.completionDataSource = { [weak self] in
             self?.profileModel?.openMedia()
+        }
+        cityCompletion = { [weak self] city in
+            self?.dataSource.cityName = city
+            self?.profileView.profileTableView.reloadData()
         }
     }
     
@@ -50,7 +56,10 @@ extension ProfileViewController: UITableViewDelegate {
         guard indexPath.section != .zero else { return }
         switch dataSource.fields[indexPath.row].type {
         case .city, .profile:
-            profileModel?.transitionToControllers(type: dataSource.fields[indexPath.row].type)
+            profileModel?.transitionToControllers(
+                type: dataSource.fields[indexPath.row].type,
+                cityCompletion: cityCompletion
+            )
         default:
             break
         }

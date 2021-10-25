@@ -25,7 +25,9 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func setup(image: UIImage?) {
-        profileImageView.image = image ?? UIImage() //TODO: change to default image
+        let defaultImageConfiguration = UIImage.SymbolConfiguration(pointSize: 16, weight: .ultraLight)
+        let defaultImage = UIImage(systemName: "plus.circle", withConfiguration: defaultImageConfiguration)?.withTintColor(.lightGray)
+        profileImageView.image = image ?? defaultImage
         profileNameLabel.text = "sonicyou"
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         profileImageView.addGestureRecognizer(tap)

@@ -11,11 +11,11 @@ class ProfileRouter {
     
     weak var profileViewController: ProfileViewController?
     
-    func transitionToControllers(type: Field.FieldState) {
+    func transitionToControllers(type: Field.FieldState, cityCompletion: StringCompletion?) {
         switch type {
         case .city:
-            let citiesVC = CountryAssembly().build()
-            profileViewController?.navigationController?.pushViewController(citiesVC, animated: true)
+            let countryVC = CountryAssembly().build(cityCompletion: cityCompletion)
+            profileViewController?.navigationController?.pushViewController(countryVC, animated: true)
         case .profile:
             break
         default:
@@ -31,8 +31,10 @@ class ProfileRouter {
         let cameraButton = UIAlertAction(title: "Camera", style: .default) { [weak self]  _ in
             self?.openCamera()
         }
+        let dismissButton = UIAlertAction(title: "Close", style: .cancel, handler: nil)
         alert.addAction(galleryButton)
         alert.addAction(cameraButton)
+        alert.addAction(dismissButton)
         profileViewController?.present(alert, animated: true)
     }
     
