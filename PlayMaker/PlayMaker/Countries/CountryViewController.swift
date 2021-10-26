@@ -33,6 +33,7 @@ class CountryViewController: UIViewController {
         view.addSubview(citiesView)
         citiesView.countriesTableView.dataSource = dataSource
         citiesView.countriesTableView.delegate = self
+        self.navigationItem.title = "Country"
     }
     
     private func configureLayout() {

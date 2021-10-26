@@ -43,6 +43,7 @@ class FieldTableViewCell: UITableViewCell {
         titleLabel.text = NSLocalizedString(field.title, comment: "")
         subTitleLabel.isHidden = field.isCity == nil
         subTitleLabel.text = cityName
+        subTitleLabel.font =  UIFont.boldSystemFont(ofSize: 18)
         notificationSwitch.isHidden = field.switchField == nil
         segmentedPicker.isHidden = field.picker == nil
         datePicker.isHidden = field.datePicker == nil

@@ -27,6 +27,7 @@ class CityViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureLayout()
+        self.navigationItem.title = "City"
     }
     
     private func configureUI() {

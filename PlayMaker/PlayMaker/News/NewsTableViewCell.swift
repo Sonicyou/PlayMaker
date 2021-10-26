@@ -37,7 +37,11 @@ class NewsTableViewCell: UITableViewCell {
     private func configureUI() {
         [authorLabel, title, descriptionLabel, sourceLabel, publishedTimeLabel,  separatorView]
             .forEach { contentView.addSubview($0) }
-        descriptionLabel.numberOfLines = 4
+        title.numberOfLines = 2
+        title.font =  UIFont.boldSystemFont(ofSize: 18)
+        sourceLabel.font = sourceLabel.font.withSize(14)
+        publishedTimeLabel.font = publishedTimeLabel.font.withSize(14)
+        descriptionLabel.numberOfLines = 3
         selectionStyle = .none
         separatorView.backgroundColor = .lightGray
     }
@@ -50,7 +54,7 @@ class NewsTableViewCell: UITableViewCell {
         title.snp.makeConstraints { make in
             make.top.equalTo(sourceLabel.snp.bottom).offset(20)
             make.leading.equalTo(15)
-            make.width.equalTo(250)
+            make.trailing.equalTo(-15)
         }
         
         publishedTimeLabel.snp.makeConstraints { make in

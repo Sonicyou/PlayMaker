@@ -16,7 +16,7 @@ protocol NetworkServiceProtocol {
 class NetworkService: NetworkServiceProtocol {
     
     func getNews(completion: @escaping NewsCompletion) {
-        getRequest(URLString: baseNewsURL + accessKey) { result in
+        getRequest(URLString: baseNewsURL + accessKey +  "&countries=ca") { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

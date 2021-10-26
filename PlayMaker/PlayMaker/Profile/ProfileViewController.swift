@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         configure()
         bind()
-//        view.backgroundColor = .white
     }
     
     private func configure() {

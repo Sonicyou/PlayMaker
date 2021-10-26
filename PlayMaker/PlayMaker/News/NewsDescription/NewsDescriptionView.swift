@@ -13,7 +13,7 @@ class NewsDescriptionView: UIView {
     private let scrollView = UIScrollView()
     private let containerView = UIView()
     private let stackView = UIStackView()
-    private let imageView = UIImageView()
+    private var imageView = UIImageView()
     private let title = UILabel()
     private let descriptionLabel = UILabel()
     
@@ -33,7 +33,6 @@ class NewsDescriptionView: UIView {
                 if let _ = image {
                     self.stackView.insertArrangedSubview(self.imageView, at: 0)
                     self.stackView.setCustomSpacing(20, after: self.imageView)
-
                 }
             }
         }
@@ -59,6 +58,8 @@ class NewsDescriptionView: UIView {
         imageView.contentMode = .scaleAspectFit
         descriptionLabel.numberOfLines = .zero
         title.numberOfLines = .zero
+        title.font =  UIFont.boldSystemFont(ofSize: 22)
+        descriptionLabel.font = descriptionLabel.font.withSize(18)
         title.textAlignment = .center
         backgroundColor = .white
     }
@@ -78,5 +79,26 @@ class NewsDescriptionView: UIView {
             make.trailing.bottom.equalTo(-15)
             make.top.leading.equalTo(15)
         }
+    }
+}
+
+extension UIImageView {
+    var contentClippingRect: CGRect {
+        guard let image = image else { return bounds }
+        guard contentMode == .scaleAspectFit else { return bounds }
+        guard image.size.width > 0 && image.size.height > 0 else { return bounds }
+
+        let scale: CGFloat
+        if image.size.width > image.size.height {
+            scale = bounds.width / image.size.width
+        } else {
+            scale = bounds.height / image.size.height
+        }
+
+        let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+        let x = (bounds.width - size.width) / 2.0
+        let y = (bounds.height - size.height) / 2.0
+
+        return CGRect(x: x, y: y, width: size.width, height: size.height)
     }
 }
